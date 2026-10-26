@@ -313,3 +313,10 @@ main,.foot{position:relative;z-index:1}
 .oss-link a{font:400 11px/1.4 var(--mono);color:var(--pink);text-decoration:none;border-bottom:1px solid #f06aa555}
 .oss-link a:hover{border-color:var(--pink)}
 .tl__thumb--org{object-fit:contain;padding:7px;background:#fff;border-color:#f06aa588}
+/* calm illustrated tiles: pastel gradient + line icon, one per experience */
+.tl__pic{display:grid;place-items:center;background:radial-gradient(120% 120% at 20% 15%,var(--pa),var(--pb));border:1px solid #ffffff1f}
+.tl__pic svg{width:46%;height:46%;fill:none;stroke:#1d2240;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tl__thumb.tl__pic{border-radius:14px}
+.tl__jobh{display:flex;align-items:center;gap:10px}
+.tl__pic--job{flex:none;width:34px;height:34px;border-radius:10px}
+.tl__pic--job svg{width:58%;height:58%}
