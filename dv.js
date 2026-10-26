@@ -34,12 +34,12 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   $$('[data-in]').forEach(el => io.observe(el));
 
-  // open source: public PRs to Microsoft and Google repos, straight from GitHub search.
+  // open source: public PRs to Microsoft, Google and Netflix repos, straight from GitHub search.
   // Stays hidden until the first one exists.
   const oss = $('[data-oss]');
   if (oss) {
     // open = in review, merged = merged, closed without merging is skipped
-    const q = encodeURIComponent('is:pr author:kkonnerharris org:microsoft org:google');
+    const q = encodeURIComponent('is:pr author:kkonnerharris org:microsoft org:google org:netflix');
     fetch(`https://api.github.com/search/issues?q=${q}&sort=created&order=desc&per_page=8`)
       .then(r => r.ok ? r.json() : null)
       .then(d => {
@@ -48,7 +48,7 @@
         if (!prs.length) return;
         oss.innerHTML = prs.map(i => {
           const repo = i.repository_url.split('/repos/')[1], merged = !!i.pull_request?.merged_at;
-          return `<li><span class="st${merged ? ' st--merged' : ''}">${merged ? '✓ merged' : 'in review'}</span><a href="${i.html_url}" target="_blank" rel="noopener">${esc(repo)}: ${esc(i.title)}</a></li>`;
+          return `<li><span class="oss__st${merged ? ' oss__st--merged' : ''}">${merged ? '✓ merged' : 'in review'}</span><a href="${i.html_url}" target="_blank" rel="noopener">${esc(repo)}: ${esc(i.title)}</a></li>`;
         }).join('');
         oss.hidden = false;
       })
