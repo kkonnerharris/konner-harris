@@ -186,6 +186,7 @@ main,.foot{position:relative;z-index:1}
 .k{display:inline-block;width:8px;height:8px;background:var(--pink)}
 .k--home{width:10px;height:10px;box-shadow:0 0 0 3px #f06aa544}
 .k--v{background:none;border:1.5px solid var(--pink)}
+.k--p{background:none;border:1.5px dashed #7b93ff}
 
 /* rows: education + where I've been */
 .rows{list-style:none;margin:0;padding:0}

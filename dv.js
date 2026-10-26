@@ -133,7 +133,7 @@
   }
 
   // dot map of where I've been: contiguous US from a coarse outline, arcs out from home.
-  // solid pins = in person, hollow = virtual / online
+  // solid pins = in person, hollow = virtual / online, dashed blue = planned
   const map = $('[data-map]');
   if (map) {
     const US = [[-124.7,48.4],[-123,46],[-124,42],[-122,37.5],[-117.1,32.5],[-111,31.3],[-108.2,31.3],[-106.5,31.8],[-104.5,29.6],[-103,29],[-101.4,29.8],[-99.5,27.5],[-97.4,25.9],[-97.2,27.8],[-94,29.6],[-90,29.1],[-89,30.2],[-85.5,30],[-84,30.1],[-82.7,27.5],[-81.1,25.1],[-80.1,26.8],[-81.4,30.7],[-79,33.5],[-75.6,35.3],[-76,37],[-74,40.5],[-70,41.5],[-70.7,43],[-67,44.8],[-67.8,47.1],[-69.2,47.4],[-71.5,45],[-75,45],[-79,43.3],[-83,42],[-82.5,45.3],[-84.6,46.5],[-88,48.2],[-95.2,49],[-123,49]];
@@ -147,6 +147,7 @@
       { key: 'kc', ll: [-94.58, 39.1], name: 'Kansas City', sub: 'Tech for good meetup', dx: -10, dy: -14, align: 'right' },
       { key: 'chapelhill', ll: [-79.06, 35.91], name: 'Chapel Hill', sub: 'AI for small business', v: true, dx: 10, dy: -6, align: 'left' },
       { key: 'atlanta', ll: [-84.39, 33.75], name: 'Atlanta', sub: 'Georgia Tech · online', v: true, dx: -10, dy: 18, align: 'right' },
+      { key: 'stanford', ll: [-122.17, 37.43], name: 'Stanford', sub: 'TreeHacks · Feb 2027', planned: true, dx: 10, dy: -4, align: 'left' },
       { key: 'broward', ll: [-80.25, 26.12], name: 'Broward County', sub: 'Agents with Google', v: true, dx: -12, dy: -4, align: 'right' },
     ];
     // hovering an event row lights up its pin
@@ -188,13 +189,14 @@
         const k = Math.max(0, Math.min(1, (el - i * 260) / 900));
         if (k <= 0) return;
         const mx = (hx + x) / 2, my = Math.min(hy, y) - Math.hypot(x - hx, y - hy) * 0.28;
-        g.strokeStyle = p.v ? '#f06aa566' : '#f06aa5aa'; g.lineWidth = 1.2; g.setLineDash(p.v ? [2, 4] : [4, 4]);
+        g.strokeStyle = p.planned ? '#5b7cff77' : p.v ? '#f06aa566' : '#f06aa5aa'; g.lineWidth = 1.2; g.setLineDash(p.planned ? [1, 5] : p.v ? [2, 4] : [4, 4]);
         g.beginPath();
         for (let j = 0; j <= 48 * k; j++) { const t = j / 48, bx = (1 - t) ** 2 * hx + 2 * (1 - t) * t * mx + t * t * x, by = (1 - t) ** 2 * hy + 2 * (1 - t) * t * my + t * t * y; j ? g.lineTo(bx, by) : g.moveTo(bx, by); }
         g.stroke(); g.setLineDash([]);
         if (k < 1) return;
         const s = small() ? 4 : 5;
-        if (p.v) { g.strokeStyle = PINK; g.lineWidth = 1.5; g.strokeRect(x - s, y - s, s * 2, s * 2); }
+        if (p.planned) { g.strokeStyle = '#7b93ff'; g.lineWidth = 1.5; g.setLineDash([2, 2]); g.strokeRect(x - s, y - s, s * 2, s * 2); g.setLineDash([]); }
+        else if (p.v) { g.strokeStyle = PINK; g.lineWidth = 1.5; g.strokeRect(x - s, y - s, s * 2, s * 2); }
         else { g.fillStyle = PINK; g.fillRect(x - s, y - s, s * 2, s * 2); }
         if (hot === p.key) { const r = s + 6 + Math.sin(now / 160) * 2; g.strokeStyle = PINK; g.lineWidth = 1.5; g.strokeRect(x - r, y - r, r * 2, r * 2); }
         label(p, x, y);
