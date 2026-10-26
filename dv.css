@@ -39,7 +39,7 @@ main,.foot{position:relative;z-index:1}
 .where span{display:block;font:500 11px/1.4 var(--sans);color:var(--g2)}
 
 /* hero */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 9vh;overflow:hidden}
+.hero{position:relative;cursor:pointer;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 9vh;overflow:hidden}
 .hero__photo{position:absolute;left:50%;top:max(130px,14vh);width:min(640px,60vh);transform:translateX(-50%);
   -webkit-mask:radial-gradient(70% 62% at 50% 40%,#000 55%,transparent 100%);mask:radial-gradient(70% 62% at 50% 40%,#000 55%,transparent 100%)}
 .hero__photo img{width:100%;height:auto;filter:brightness(.72) contrast(1.08);animation:fadeIn 1.6s ease both}
@@ -72,8 +72,7 @@ main,.foot{position:relative;z-index:1}
 .cursor-tag svg{width:16px;height:16px;fill:var(--pink);margin-top:14px;transform:rotate(-8deg)}
 .tag-box{display:flex;flex-direction:column;align-items:flex-start;margin-left:2px}
 .tag-box [data-tag-label]{padding:3px 12px 4px;background:var(--pink);color:#111;font:500 13px/1.2 var(--sans);white-space:nowrap;transition:padding .25s}
-.tag-hint{margin-top:5px;font:400 10px/1 var(--mono);color:#ffffff66;letter-spacing:.04em;opacity:0;transition:opacity .3s}
-.cursor-tag:hover .tag-hint,.cursor-tag:focus-visible .tag-hint,.is-pong .tag-hint{opacity:1}
+.tag-hint{margin-top:6px;padding:3px 6px;font:500 10.5px/1 var(--mono);color:#9fb3ff;letter-spacing:.04em;background:#0b1430cc;border:1px solid #4169e155;white-space:nowrap}
 
 /* hero pong: the tag is the paddle, the ball is royal blue */
 .is-pong{cursor:none;touch-action:none}
