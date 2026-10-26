@@ -35,7 +35,7 @@
   $$('[data-in]').forEach(el => io.observe(el));
 
   // open source: public PRs to Microsoft, Google and Netflix repos, straight from GitHub search.
-  // Stays hidden until the first one exists.
+  // The card stays hidden until the first one exists.
   const oss = $('[data-oss]');
   if (oss) {
     // open = in review, merged = merged, closed without merging is skipped
@@ -50,7 +50,7 @@
           const repo = i.repository_url.split('/repos/')[1], merged = !!i.pull_request?.merged_at;
           return `<li><span class="oss__st${merged ? ' oss__st--merged' : ''}">${merged ? '✓ merged' : 'in review'}</span><a href="${i.html_url}" target="_blank" rel="noopener">${esc(repo)}: ${esc(i.title)}</a></li>`;
         }).join('');
-        oss.hidden = false;
+        oss.closest('[data-oss-card]').hidden = false;
       })
       .catch(() => {});
   }
@@ -63,95 +63,24 @@
   const track = $('[data-stack] .stack__track');
   track.innerHTML += track.innerHTML;
 
-  // Hero pong. The royal-blue ball is always bouncing around the hero; click anywhere in
-  // the hero (or the pink name tag) and the tag becomes your paddle, following the
-  // pointer. While playing, the ball bounces off the top and sides and the bottom is a
-  // miss. Esc, or scrolling the hero out of view, ends the game.
+  // The pink name tag drifts around the hero like a collaborator's cursor.
   const tag = $('[data-tag]'), hero = $('#home');
   if (tag) {
-    const label = tag.querySelector('[data-tag-label]'), hint = tag.querySelector('.tag-hint');
-    const ball = $('[data-ball]'), board = $('[data-pong-score]');
-    let x = 0, y = 0, tx = 0, ty = 0, playing = false, visible = true;
-    let bx = 0, by = 0, vx = 0, vy = 0, live = false, score = 0, best = 0, last = 0;
-    try { best = +localStorage.getItem('pong-best') || 0; } catch {}
-    const R = 9, TOP = 90 + R; // keep the ball under the header
+    let x = 0, y = 0, tx = 0, ty = 0, visible = true;
     const pick = () => {
-      if (playing) return;
       const w = hero.clientWidth, h = hero.clientHeight;
       tx = w * (0.55 + Math.random() * 0.3); ty = h * (0.14 + Math.random() * 0.3);
     };
     pick(); x = tx; y = ty;
-    if (!reduce) setInterval(pick, 2600);
-
-    const show = msg => { board.textContent = msg ?? `pong · ${score}${best ? ` · best ${best}` : ''}`; };
-    const serve = speed => {
-      const w = hero.clientWidth;
-      bx = w * (0.3 + Math.random() * 0.4); by = hero.clientHeight * 0.24;
-      const a = (Math.random() * 0.8 + 0.6) * (Math.random() < 0.5 ? -1 : 1);
-      vx = Math.sin(a) * speed; vy = Math.abs(Math.cos(a)) * speed + 1.2;
-      live = true; ball.hidden = false;
-    };
-    const start = () => {
-      if (playing) return;
-      playing = true; score = 0; hero.classList.add('is-pong');
-      label.textContent = 'Konner Harris'; hint.textContent = 'esc to stop';
-      board.hidden = false; show(); serve(5);
-    };
-    const stop = () => {
-      if (!playing) return;
-      playing = false; board.hidden = true; hero.classList.remove('is-pong');
-      label.textContent = 'Konner'; hint.textContent = '▸ click to play pong';
-      pick();
-      if (reduce) { live = false; ball.hidden = true; } else serve(2.6); // back to the idle drift
-    };
-    tag.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); start(); } });
-    // any click in the hero starts a game, except on real links and buttons
-    hero.addEventListener('click', e => { if (!e.target.closest('a, button')) start(); });
-    addEventListener('keydown', e => { if (e.key === 'Escape') stop(); });
-    // the paddle follows the pointer (mouse or finger) while playing
-    hero.addEventListener('pointermove', e => {
-      if (!playing) return;
-      const r = hero.getBoundingClientRect();
-      tx = e.clientX - r.left - 18; ty = e.clientY - r.top - 24;
-    });
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (!visible) stop(); }, { threshold: 0.35 }).observe(hero);
-    if (!reduce) serve(2.6); else ball.hidden = true; // idle: drift and bounce off every wall
-
-    (function frame(now) {
-      const dt = Math.min(2, last ? (now - last) / 16.67 : 1); last = now;
-      if (visible) {
-        const k = playing ? 0.35 : 0.025;
-        x += (tx - x) * k; y += (ty - y) * k;
-        tag.style.transform = `translate(${x}px,${y}px)`;
-      }
-      if (live && visible) {
-        const w = hero.clientWidth, h = hero.clientHeight;
-        bx += vx * dt; by += vy * dt;
-        if (bx < R) { bx = R; vx = Math.abs(vx); }
-        if (bx > w - R) { bx = w - R; vx = -Math.abs(vx); }
-        if (by < TOP) { by = TOP; vy = Math.abs(vy); }
-        if (playing) {
-          // paddle = the pink label box
-          const hr = hero.getBoundingClientRect(), pr = label.getBoundingClientRect();
-          const px = pr.left - hr.left, py = pr.top - hr.top, pw = pr.width, ph = pr.height;
-          if (bx + R > px && bx - R < px + pw && by + R > py && by - R < py + ph) {
-            const fromTop = by < py + ph / 2;
-            vy = (fromTop ? -1 : 1) * Math.min(Math.abs(vy) * 1.05, 14);
-            vx = Math.max(-12, Math.min(12, vx * 1.03 + ((bx - (px + pw / 2)) / (pw / 2)) * 2.2)); // where you hit it steers it
-            by = fromTop ? py - R : py + ph + R;
-            score++; if (score > best) { best = score; try { localStorage.setItem('pong-best', best); } catch {} }
-            show();
-          }
-          if (by > h + R * 2) {
-            live = false; ball.hidden = true;
-            show(`missed · ${score}${best ? ` · best ${best}` : ''}`); score = 0;
-            setTimeout(() => { if (playing) { show(); serve(5); } }, 1100);
-          }
-        } else if (by > h - R - 60) { by = h - R - 60; vy = -Math.abs(vy); } // idle: stay above the places strip
-        ball.style.transform = `translate(${bx - R}px,${by - R}px)`;
-      }
-      requestAnimationFrame(frame);
-    })(0);
+    tag.style.transform = `translate(${x}px,${y}px)`;
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.1 }).observe(hero);
+    if (!reduce) {
+      setInterval(pick, 2600);
+      (function frame() {
+        if (visible) { x += (tx - x) * 0.025; y += (ty - y) * 0.025; tag.style.transform = `translate(${x}px,${y}px)`; }
+        requestAnimationFrame(frame);
+      })();
+    }
   }
 
   // drawing pad

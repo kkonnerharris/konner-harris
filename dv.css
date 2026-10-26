@@ -39,7 +39,7 @@ main,.foot{position:relative;z-index:1}
 .where span{display:block;font:500 11px/1.4 var(--sans);color:var(--g2)}
 
 /* hero */
-.hero{position:relative;cursor:pointer;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 9vh;overflow:hidden}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 9vh;overflow:hidden}
 .hero__photo{position:absolute;left:50%;top:max(130px,14vh);width:min(640px,60vh);transform:translateX(-50%);
   -webkit-mask:radial-gradient(70% 62% at 50% 40%,#000 55%,transparent 100%);mask:radial-gradient(70% 62% at 50% 40%,#000 55%,transparent 100%)}
 .hero__photo img{width:100%;height:auto;filter:brightness(.72) contrast(1.08);animation:fadeIn 1.6s ease both}
@@ -68,18 +68,20 @@ main,.foot{position:relative;z-index:1}
 @keyframes drift{to{transform:translateX(-50%)}}
 
 /* the wandering collaborator cursor */
-.cursor-tag{position:absolute;left:0;top:0;z-index:3;display:flex;align-items:flex-start;will-change:transform;cursor:pointer;outline-offset:4px}
+.cursor-tag{position:absolute;left:0;top:0;z-index:3;display:flex;align-items:flex-start;will-change:transform;pointer-events:none}
 .cursor-tag svg{width:16px;height:16px;fill:var(--pink);margin-top:14px;transform:rotate(-8deg)}
 .tag-box{display:flex;flex-direction:column;align-items:flex-start;margin-left:2px}
 .tag-box [data-tag-label]{padding:3px 12px 4px;background:var(--pink);color:#111;font:500 13px/1.2 var(--sans);white-space:nowrap;transition:padding .25s}
-.tag-hint{margin-top:6px;padding:3px 6px;font:500 10.5px/1 var(--mono);color:#9fb3ff;letter-spacing:.04em;background:#0b1430cc;border:1px solid #4169e155;white-space:nowrap}
 
-/* hero pong: the tag is the paddle, the ball is royal blue */
-.is-pong{cursor:none;touch-action:none}
-.is-pong .cursor-tag{cursor:none}
-.is-pong [data-tag-label]{padding:6px 26px 7px;font-size:15px;box-shadow:0 0 24px #f06aa566}
-.ball{position:absolute;left:0;top:0;z-index:4;width:18px;height:18px;border-radius:50%;background:#4169e1;box-shadow:0 0 18px #4169e1aa,0 0 4px #9fb3ff inset;pointer-events:none;will-change:transform}
-.pong-score{position:absolute;right:40px;top:104px;z-index:4;margin:0;font:400 12px/1 var(--mono);letter-spacing:.06em;color:#9fb3ff}
+/* quiet tetrominoes tucked into the hero corners */
+.tets{position:absolute;inset:0;z-index:1;pointer-events:none}
+.tet{position:absolute;fill:#0f1d4a;stroke:#1b2f6e;stroke-width:1;opacity:.85}
+.tet--tr1{top:118px;right:64px;width:84px}
+.tet--tr2{top:180px;right:40px;width:84px}
+.tet--tr3{top:196px;right:96px;width:60px;opacity:.55}
+.tet--bl1{bottom:110px;left:34px;width:44px}
+.tet--bl2{bottom:110px;left:86px;width:66px}
+.tet--bl3{bottom:174px;left:40px;width:42px;opacity:.55}
 
 /* sections */
 .sec{width:var(--w);margin:0 auto;padding:110px 0 30px}
@@ -276,7 +278,10 @@ main,.foot{position:relative;z-index:1}
   .top{height:64px;padding:0 16px}
   .hero{padding-bottom:12vh}
   .drift{padding:0 16px;bottom:16px}
-  .pong-score{right:16px;top:80px}
+  .tets{opacity:.6}
+  .tet--tr2,.tet--tr3,.tet--bl2,.tet--bl3{display:none}
+  .tet--tr1{top:76px;right:14px;width:48px}
+  .tet--bl1{display:none}
   .drift__k{display:none}
   .hero__photo{top:110px;width:min(420px,92vw)}
   .hero__title{font-size:clamp(56px,17vw,90px)}
@@ -299,4 +304,5 @@ main,.foot{position:relative;z-index:1}
   html{scroll-behavior:auto}
   [data-in]{opacity:1;filter:none;transform:none}
 }
-.oss code{font:400 11.5px/1 var(--mono);color:#e6e6e6}
+.tl__pc code,.oss code{font:400 11.5px/1 var(--mono);color:#e6e6e6}
+.tl__p[hidden]{display:none}
