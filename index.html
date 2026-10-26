@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — Konner Harris</title>
+<meta name="description" content="Konner Harris is a computer scientist from Southern Illinois building across AI, networking, robotics and neurotechnology. B.A. Computer Science, SIU Carbondale. Incoming M.S. Computer Science, Georgia Tech.">
+<meta property="og:title" content="Konner Harris">
+<meta property="og:description" content="Computer scientist building across AI, networking, robotics and neurotechnology.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='22' y='22' width='34' height='34' fill='%23ffffff'/><rect x='8' y='8' width='38' height='38' fill='%23f06aa5'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dv.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="sky" data-sky aria-hidden="true"></canvas>
+<canvas class="cubes" data-cubes aria-hidden="true"></canvas>
+
+<header class="top" data-top>
+  <a class="mark" href="#home" aria-label="Konner Harris, back to top"><i></i><i></i></a>
+  <p class="where"><b>Based in Southern Illinois, USA</b><span data-clock>Central Time</span></p>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero__photo" aria-hidden="true"><img src="img/konner-cutout.webp" width="1087" height="1100" alt=""></div>
+    <div class="cursor-tag" data-tag aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5.5 14 2-6 6-2z"/></svg><span>Konner</span></div>
+    <div class="hero__copy">
+      <h1 class="hero__title"><span class="l1">Hi there</span><span class="l2">I am Konner<i class="sq" aria-hidden="true"></i></span></h1>
+      <p class="hero__sub"><span class="g">Building systems since</span> 2023</p>
+      <p class="hero__sub">Research Assistant <span class="g">at</span> <a href="#experience">SIU X-Lab <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></p>
+    </div>
+      <div class="drift" aria-label="Places I've worked">
+      <p class="drift__k">Where I've built</p>
+      <div class="drift__mask"><ul class="drift__track" data-drift><li>SIU Network Engineering</li><li>SIU X-Lab</li><li>Avaiz Automations</li><li>Handshake AI</li><li>COET Systems</li><li>Hangar 9</li><li>H&amp;L Holiday Lighting</li><li>Sentinel Technologies</li><li>John A. Logan College</li></ul></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="sec">
+    <h2 class="h" data-in>Some projects<i>.</i></h2>
+    <ul class="pgrid">
+      <li class="pc" data-in><a href="https://kkonnerharris.github.io/neuroreach-web/" target="_blank" rel="noopener">
+        <div class="pc__dev"><img src="img/h-neuroreach.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>NeuroReach</h3><p>Real EEG motor-imagery data drives a robot arm. Built at the ASU West Valley Game Jam.</p></div>
+        <svg class="pc__arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg></a></li>
+      <li class="pc" data-in><div class="pc__in">
+        <div class="pc__dev"><img src="img/astrabuddy.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>ASTRABUDDY</h3><p>An AI mission companion for astronauts. My practice build for NASA Space Apps.</p></div>
+        <span class="pc__tag">prep</span></div></li>
+      <li class="pc" data-in><div class="pc__in">
+        <div class="pc__dev"><img src="img/h-brainscan.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>BrainScan</h3><p>Federated MRI tumor classification, ~97% accuracy, deployed across Google Cloud nodes.</p></div></div></li>
+      <li class="pc" data-in><div class="pc__in">
+        <div class="pc__dev"><img src="img/h-robot.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>Unitree Go2</h3><p>Talking to a robot dog: local LLMs and VLMs wired into ROS 2, LiDAR and camera.</p></div></div></li>
+      <li class="pc" data-in><div class="pc__in">
+        <div class="pc__dev"><img src="img/mars.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>Mars Pathfinder AI</h3><p>A 3D Mars expedition planner on real Jezero crater terrain, with A* routing and a rover autopilot.</p></div></div></li>
+      <li class="pc" data-in><div class="pc__in">
+        <div class="pc__dev"><img src="img/h-gerry.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>GerryCheck</h3><p>Gerrymandering analysis on Illinois voting districts with PostGIS. Senior design.</p></div></div></li>
+
+      <li class="pc pc--more" data-more-row data-in>
+        <button type="button" class="pc__in" data-more aria-expanded="false" aria-controls="more-projects">
+          <span class="pc__txt"><span class="h3">More projects</span><span class="p">Client sites, healthcare apps, data engineering and the apps I built for a bar.</span></span>
+          <svg class="pc__arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg>
+        </button>
+      </li>
+    </ul>
+    <ul class="pgrid pgrid--more" id="more-projects" hidden>
+      <li class="pc"><a href="https://kkonnerharris.github.io/h-and-l-holiday-lighting-editable/" target="_blank" rel="noopener">
+        <div class="pc__dev"><img src="img/hl-project.jpg" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>H&amp;L Holiday Lighting</h3><p>Client site and lead workflow for a Southern Illinois lighting business.</p></div>
+        <svg class="pc__arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg></a></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#2a1830"><span>COET</span></div>
+        <div class="pc__txt"><h3>COET Systems</h3><p>Rebuilt the company site with an integrated conversational voice agent.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#13281f"><span>Tip<b>Out</b></span></div>
+        <div class="pc__txt"><h3>Hangar 9 apps</h3><p>TipOut cut tip math ~90%, plus dart scoring, Shot Roulette and a recipe book.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#14223a"><span>Recov<b>R</b></span></div>
+        <div class="pc__txt"><h3>RecovR</h3><p>Recovery tracking in React and Supabase, with SMART on FHIR integration work.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#1d1c3a"><span>Neuro<b>V</b></span></div>
+        <div class="pc__txt"><h3>NeuroVision</h3><p>Tracks neurological vision symptoms over time. Not a diagnostic device.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#2b1a3d"><span>COET<b>M</b></span></div>
+        <div class="pc__txt"><h3>COETMGuide</h3><p>AI academic advising with visual degree planning across 14+ programs.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#33200f"><span>ETL<b>.</b></span></div>
+        <div class="pc__txt"><h3>Distributed data</h3><p>PySpark ETL on Dataproc and BigQuery analysis of a 500+ column dataset.</p></div></div></li>
+      <li class="pc"><div class="pc__in"><div class="pc__dev"><img src="img/h-eeg.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>EEG privacy</h3><p>Can EEG reveal intent or identity? Ongoing research, no results claimed yet.</p></div></div></li>
+    </ul>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="sec">
+    <h2 class="h" data-in>What I can do<i>.</i></h2>
+    <div class="svc">
+      <article class="box" data-in><p class="mono">01 / build</p><h3>Custom software</h3><p>Purpose-built apps, websites and internal tools that make everyday work clearer.</p><p class="ex"><b>e.g.</b> TipOut cut shift-end tip math by about 90%.</p></article>
+      <article class="box" data-in><p class="mono">02 / integrate</p><h3>AI integration</h3><p>AI connected to your site or workflows, so people find answers and skip repetitive tasks.</p><p class="ex"><b>e.g.</b> Agentic workflows at Avaiz Automations.</p></article>
+      <article class="box" data-in><p class="mono">03 / converse</p><h3>Voice agents</h3><p>Voice experiences that answer common questions and guide customers to a next step.</p><p class="ex"><b>e.g.</b> The voice agent on the COET Systems site.</p></article>
+      <article class="box" data-in><p class="mono">04 / draft</p><h3>Simple CAD</h3><p>Send a few measurements, a description or some photos, and I'll turn them into a clean CAD drawing with AI-assisted tools.</p><p class="ex"><b>e.g.</b> A server-room floor plan and 3D layout, drawn as DXF.</p></article>
+    </div>
+    <a class="inq" data-in href="mailto:konnerharris4@gmail.com?subject=Software%20%26%20AI%20project%20inquiry">Send a project inquiry <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+  </section>
+
+  <!-- FRAGMENTS -->
+  <section id="fragments" class="sec">
+    <h2 class="h" data-in>Fragments of me<i>.</i></h2>
+    <div class="bento">
+      <article class="box b-stack" data-in>
+        <div class="win stack" data-stack>
+          <div class="stack__track">
+            <div class="st"><b>20,000+ users</b><span>On the SIU campus network I supported.</span></div>
+            <div class="st"><b>2,000+ ports &amp; APs</b><span>Verified on campus, documentation corrected.</span></div>
+            <div class="st"><b>~$14K saved</b><span>Removed an unneeded SDK license at X-Lab.</span></div>
+            <div class="st"><b>~97% accuracy</b><span>Federated MRI classifier, BrainScan.</span></div>
+            <div class="st"><b>5,000+ users</b><span>On the help desk at John A. Logan.</span></div>
+          </div>
+        </div>
+        <h3>From wiring closets to robots</h3><p>Every layer of the stack, hands-on.</p>
+      </article>
+
+      <article class="box b-draw" data-in>
+        <div class="win draw"><canvas data-draw aria-label="Drawing pad"></canvas><button type="button" class="chip" data-clear>Clear</button></div>
+        <h3>I build things that move</h3><p>The robot arm's busy, so it's your turn. Draw something!</p>
+      </article>
+
+      <article class="box b-term" data-in>
+        <div class="win term"><p class="term__bar"><i></i><i></i><i></i></p><pre data-term aria-label="Terminal animation"></pre></div>
+        <h3>I started at the help desk</h3><p>IT tech → network → AI &amp; robotics.</p>
+      </article>
+
+      <article class="box b-words" data-in>
+        <p class="words"><span>thinker.</span><span>tinkerer.</span><span>builder.</span></p>
+      </article>
+
+      <article class="box b-space" data-in>
+        <div class="space"><img src="img/astrabuddy-dash.webp" loading="lazy" alt="">
+          <div class="space__row"><div><b>NASA Space Apps</b><span class="g"> · Nov 14–15, 2026</span><p class="space__count" data-count>&nbsp;</p></div><span class="space__dot" aria-hidden="true"></span></div>
+        </div>
+      </article>
+
+      <article class="box b-game" data-in>
+        <div class="win game"><img src="img/netops.webp" loading="lazy" alt="A network closet in Saluki NetOps, a 3D game of the SIU network job"></div>
+        <h3>I turned my job into a game</h3><p>Saluki NetOps: work tickets, fix VLANs, escalate bad jacks to Telecom.</p>
+      </article>
+
+      <article class="box b-field" data-in>
+        <div class="field" aria-hidden="true"><i></i></div>
+        <h3>Sundays on the field</h3><p>Youth soccer coach and referee. Grew up on rugby, football, soccer, baseball and competitive cheer. Humane-shelter volunteer.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="sec">
+    <h2 class="h" data-in>Education<i>.</i></h2>
+    <ul class="rows rows--2">
+      <li data-in><div><b>M.S. Computer Science</b><span>Georgia Institute of Technology · online · incoming</span></div><time>2027</time></li>
+      <li data-in><div><b>AI Fundamentals</b><span>IBM SkillsBuild &amp; Cisco Networking Academy</span></div><time>cert</time></li>
+      <li data-in><div><b>B.A. Computer Science</b><span>Southern Illinois University Carbondale · 3.6 GPA · Dean's List</span></div><time>2026</time></li>
+      <li data-in><div><b>Cloud Computing Fundamentals</b><span>IBM SkillsBuild</span></div><time>cert</time></li>
+      <li data-in><div><b>Associate in Arts, History</b><span>John A. Logan College</span></div><time>A.A.</time></li>
+      <li data-in><div><b>Introduction to Quantum Computing</b><span>IBM SkillsBuild</span></div><time>cert</time></li>
+      <li data-in><div><b>Machine Learning &amp; Soft Computing</b><span>SIU coursework · with Applied Generative AI</span></div><time>B.A.</time></li>
+      <li data-in><div><b>CCNA · RHCSA</b><span>Working toward</span></div><time>next</time></li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="sec">
+    <h2 class="h" data-in>Experience<i>.</i></h2>
+    <ol class="tl">
+      <li class="tl__i" data-in>
+        <div class="tl__card box"><h3>Research Assistant</h3><ul><li>Video, LiDAR, vision-language models and local LLMs on a Unitree Go2 Pro.</li><li>Reproducible Podman environments; natural-language commands over ROS 2 and Cyclone DDS.</li><li>Removed an unneeded SDK licensing dependency, avoiding about $14,000.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#7a1f1f">XL</span><div><b>SIU X-Lab</b><time>2026—Currently</time></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/h-robot.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Unitree Go2</h3><p>Natural-language control of a robot dog: local LLMs and VLMs into ROS 2, LiDAR and camera.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · Phoenix, AZ · Oct 2026</p><h3>ASU West Valley Game Jam</h3><p>Built and demoed NeuroReach.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/h-neuroreach.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>NeuroReach</h3><p>BCI analysis and simulation: real EEG motor-imagery data decoded to drive a simulated robot arm.</p><a class="tl__gh" href="https://github.com/kkonnerharris/neuroreach" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p tl__p--ev" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · Phoenix, AZ · Oct 2026</p><h3>Hacks for Humanity</h3><p>Team mentor and volunteer at ASU / Project Humanities: visited teams, answered technical questions, checked documentation.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/h-eeg.webp" loading="lazy" alt=""><div><p class="mono">research</p><h3>EEG Privacy</h3><p>Can real EEG reveal motor intent or who a participant is? Leakage-safe evaluation, research in progress.</p><a class="tl__gh" href="https://github.com/kkonnerharris/EEG-Security-Project" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Go2 MCP Server</h3><p>An MCP server that lets an AI agent send movement commands to the Unitree Go2.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">research</p><h3>TUAB Abnormal EEG</h3><p>Abnormal-vs-normal EEG classification on the real TUH corpus, with subject-safe evaluation.</p><a class="tl__gh" href="https://github.com/kkonnerharris/TUAB-Abnormal-EEG-Classification" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-tbi-eeg.webp" loading="lazy" alt=""><div><p class="mono">research</p><h3>TBI EEG Network Recovery</h3><p>Do EEG brain networks differ between stronger and more limited recovery after mild TBI?</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">research</p><h3>Head CT Hemorrhage Pipeline</h3><p>Research-only ML on radiologist-labeled head CTs, compared against report wording.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">research</p><h3>TBI Phenotyping</h3><p>Unsupervised phenotyping of a synthetic TBI cohort with K-means, DBSCAN and PCA.</p><a class="tl__gh" href="https://github.com/kkonnerharris/TBI-Phenotyping" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-flybrain.webp" loading="lazy" alt=""><div><p class="mono">research</p><h3>Fly Brain Modulation Lab</h3><p>A FlyWire-derived connectome under serotonin-like and alcohol-like hypotheses. Exploratory model.</p></div></div>
+      </li>
+      <li class="tl__i is-r" data-in>
+        <div class="tl__card box"><h3>AI Solutions Engineer</h3><ul><li>AI automation systems and agentic workflows.</li><li>Conversational and voice agents with ElevenLabs, APIs and workflow platforms.</li><li>Prototypes practical AI for client and business workflows.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#3b2a7a">AV</span><div><b>Avaiz Automations</b><time>2026—Currently</time></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/astrabuddy.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>ASTRABUDDY</h3><p>AI mission companion for astronauts with a live 3D vehicle. NASA Space Apps prep.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · upcoming · Nov 2026</p><h3>NASA Space Apps Challenge</h3><p>Coming up, Nov 14–15. The real entry gets built at the event.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · virtual · Broward County, FL</p><h3>Building Agents with Google</h3><p>Hands-on session building AI agents with Google tools.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · virtual · Chapel Hill, NC</p><h3>AI for Small Business</h3><p>Using AI to help small businesses.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · Kansas City</p><h3>Tech for Good Meetup</h3><p>A meetup on using technology for social good.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/mars.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Mars Pathfinder AI</h3><p>3D Mars expedition planner on real Jezero crater terrain, with A* routing and a rover autopilot.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Squares</h3><p>An instant roof-estimate widget for roofing company websites.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Rise Performance 618</h3><p>Fit-test hub prototype with an ElevenLabs conversational AI widget.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-pitching.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Intuitive Pitching</h3><p>Softball pitching metrics: 4D Motion for the body, PitchLogic for the ball, AI-drafted plans.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-avaiz.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Avaiz Circuit</h3><p>A scroll-driven landing page concept for Avaiz Automations.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 430</p><h3>Simplr AI</h3><p>An AI business platform for automation services, with Stripe checkout and a client portal.</p></div></div>
+      </li>
+      <li class="tl__i" data-in>
+        <div class="tl__card box"><h3>AI Trainer</h3><ul><li>Training and evaluating AI model outputs, including technical and programming tasks.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#1f4d3a">HS</span><div><b>Handshake AI</b><time>AI training</time></div></div>
+      </li>
+      <li class="tl__i is-r" data-in>
+        <div class="tl__card box"><h3>Website Developer</h3><ul><li>Rebuilt the company website.</li><li>Integrated a conversational voice agent so visitors can talk to the business.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#1a1a1a">CO</span><div><b>COET Systems</b><time>Website &amp; voice AI</time></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">freelance</p><h3>COET Systems site</h3><p>Rebuilt the company site with an integrated conversational voice agent.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/hl-project.jpg" loading="lazy" alt=""><div><p class="mono">project</p><h3>H&amp;L Holiday Lighting</h3><p>Client site and lead workflow with Google Sheets and email notifications.</p><a class="tl__gh" href="https://github.com/kkonnerharris/h-and-l-holiday-lighting-editable" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Color Connect Du Quoin</h3><p>Website for a Du Quoin community event, with a live view of reservations.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-odles.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Odle&rsquo;s Roofing (concept)</h3><p>Redesign concept for a Benton, IL roofer where scrolling tears the roof off.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-merriclean.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>MerriClean (concept)</h3><p>Site concept for a veteran-owned cleaning company where scrolling cleans the kitchen.</p></div></div>
+      </li>
+      <li class="tl__i" data-in>
+        <div class="tl__card box"><h3>Network Engineering Student</h3><ul><li>Verified 2,000+ switch-port and access-point locations and connections, and corrected the documentation wherever it was wrong.</li><li>Wrote scripts to speed up that documentation work.</li><li>Ran a wireless survey of an SIU building with Ekahau.</li><li>Campus police 911 dispatch: traced and patched their jacks correctly and restored their call-recording software.</li><li>Layer 2 and switch configuration on Cisco and Extreme for 20,000+ users across 100+ buildings.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#6b0f1a">SIU</span><div><b>Southern Illinois University</b><time>2025—2026</time></div></div>
+      </li>
+      <li class="tl__p tl__p--ev" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · Chicago</p><h3>Google &amp; Advanced Computing Community</h3><p>Workshop with hands-on labs in cluster configuration and advanced computing.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · operating systems</p><h3>Dynamic Memory Simulator</h3><p>An OS dynamic memory allocation simulator. My instructor kept using it to teach the class after I took it.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Computer vision video game</h3><p>A personal video game project built around computer vision.</p></div></div>
+      </li>
+      <li class="tl__p tl__p--ev is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--ev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0113 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg></span><div><p class="mono">event · SIU · 2024–2025</p><h3>CETM College Ambassador</h3><p>Represented the College of Engineering, Computing, Technology, and Mathematics at SIU.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/netops.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Saluki NetOps</h3><p>A 3D game of my SIU network job: tickets, VLANs, Cisco and Extreme CLIs.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/h-brainscan.webp" loading="lazy" alt=""><div><p class="mono">class · machine learning</p><h3>BrainScan</h3><p>Federated MRI classification with Flower, ~97% accuracy, deployed on Google Cloud with Terraform.</p><a class="tl__gh" href="https://github.com/kkonnerharris/Federated-Learning-Brain-Tumor-Classification-" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>NetGraph</h3><p>A network digital twin and source of truth: sites, devices, VLANs, subnets, racks and cables.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>NetWatch</h3><p>Lightweight network-health monitor: ping, latency, packet loss and TCP ports in a web dashboard.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>GCP Private Network Security Lab</h3><p>Terraform-built private VPC, IAP-only SSH, least privilege and incident drills.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/t-serverroom.webp" loading="lazy" alt=""><div><p class="mono">project</p><h3>Server Room CAD</h3><p>A server-room floor plan and 3D layout generated in Python as DXF.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Saluki Reviews</h3><p>A course review site for SIU students.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 491</p><h3>Binary Challenge</h3><p>A pygame game built as the final project for Advanced Python.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 491 data eng</p><h3>BigQuery Cloud Function</h3><p>A Google Cloud Function that pulls trip data from BigQuery, transforms it with pandas and writes to Cloud Storage.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class</p><h3>Lunar Cycles &amp; Earthquakes</h3><p>Correlation analysis between lunar phases and earthquake data, with a 3D visualization.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Vulnerability Scanner</h3><p>A Python port scanner built on nmap that reports host state and open services.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Student Spotlight</h3><p>Real-time webcam face detection with an OpenCV DNN model.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><img class="tl__thumb" src="img/h-gerry.webp" loading="lazy" alt=""><div><p class="mono">class · senior design</p><h3>GerryCheck</h3><p>Senior design: gerrymandering analysis on Illinois voting districts with PostGIS.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>COETMGuide</h3><p>AI academic advising with visual degree planning across 14+ programs.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · data engineering</p><h3>Distributed Data Processing</h3><p>PySpark ETL benchmarked across Google Cloud Dataproc cluster configurations.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · data engineering</p><h3>COVID-19 Data Analysis</h3><p>Ten analytical BigQuery SQL queries over a 500+ column public-health dataset.</p></div></div>
+      </li>
+      <li class="tl__i is-r" data-in>
+        <div class="tl__card box"><h3>Freelance Software Developer</h3><ul><li>Apps for hospitality operations: tip calculation, dart scoring, Shot Roulette and recipes.</li><li>TipOut reduced shift-end tip math by about 90%.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#13472f">H9</span><div><b>Hangar 9</b><time>Freelance</time></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">freelance</p><h3>TipOut &amp; Hangar 9 apps</h3><p>TipOut cut tip math ~90%, plus dart scoring, Shot Roulette and a recipe book.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>RecovR</h3><p>Recovery tracking in React and Supabase, with SMART on FHIR integration work.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>NeuroVision</h3><p>Tracks neurological vision symptoms over time. Not a diagnostic device.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">project</p><h3>Job Assistant</h3><p>Tracks job searches and applications against a profile.</p></div></div>
+      </li>
+      <li class="tl__i" data-in>
+        <div class="tl__card box"><h3>Technology Solutions Extern</h3><ul><li>Technology solutions externship.</li></ul></div>
+        <div class="tl__who"><span class="logo" style="--c:#0f3a5c">ST</span><div><b>Sentinel Technologies</b><time>2026</time></div></div>
+      </li>
+      <li class="tl__i is-r" data-in>
+        <div class="tl__card box"><h3>IT Student Technician</h3><ul><li>Technical support for 5,000+ users; KACE for tickets and assets.</li><li>Helped build an inventory script for asset tracking.</li><li>Project manager for a Collegiate Cyber Defense Competition project.</li></ul><p class="fine">*Where it all started.</p></div>
+        <div class="tl__who"><span class="logo" style="--c:#1d3a6b">JAL</span><div><b>John A. Logan College</b><time>2023—2024</time></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 221</p><h3>First portfolio site</h3><p>My first personal web page, from day one of CS 221.</p></div></div>
+      </li>
+      <li class="tl__p is-r" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 225</p><h3>Month ADT in Java</h3><p>An object-oriented Month class and client program in Java.</p></div></div>
+      </li>
+      <li class="tl__p" data-in>
+        <div class="tl__pc box"><span class="tl__thumb tl__thumb--sq" aria-hidden="true"></span><div><p class="mono">class · CS 330</p><h3>Coin Change</h3><p>The coin change problem solved with dynamic programming in Python.</p></div></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- WHERE I'VE BEEN -->
+  <section id="been" class="sec">
+    <h2 class="h" data-in>Where I've been<i>.</i></h2>
+    <figure class="bmap box" data-in>
+      <canvas data-map role="img" aria-label="Map of the United States marking home in Carbondale, Illinois, plus Carterville, Illinois and St. Louis; event locations in person: Chicago, Phoenix and Kansas City; virtual or online: Chapel Hill, Atlanta (Georgia Tech) and Broward County, Florida"></canvas>
+      <figcaption class="bmap__key"><span><i class="k k--home"></i>Home</span><span><i class="k"></i>In person</span><span><i class="k k--v"></i>Virtual / online</span></figcaption>
+    </figure>
+    <ul class="rows">
+      <li data-in><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18M12 3c3 3 3 15 0 18M3 12h18"/></svg></span><div><b>NASA Space Apps Challenge</b><span>Coming up · prepping with ASTRABUDDY</span></div><time>Nov 2026</time></li>
+      <li data-in data-pin="phoenix" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="11" rx="3"/><path d="M8 11v3M6.5 12.5h3M15 12h.01M17 14h.01"/></svg></span><div><b>ASU West Valley Game Jam</b><span>Participant · built NeuroReach · Phoenix area, AZ</span></div><time>2026</time></li>
+      <li data-in data-pin="phoenix" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span><div><b>Hacks for Humanity</b><span>Team mentor &amp; volunteer · ASU / Project Humanities · Phoenix area, AZ</span></div><time>2026</time></li>
+      <li data-in data-pin="chicago" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="5" rx="1"/><path d="M8 6.5h.01M8 13.5h.01M12 20h0M8 20h8"/></svg></span><div><b>Google &amp; Advanced Computing Community</b><span>Hands-on labs · cluster configuration · Chicago</span></div><time>Workshop</time></li>
+      <li data-in data-pin="chapelhill" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3"/></svg></span><div><b>AI for Small Business</b><span>Chapel Hill, NC · virtual</span></div><time>Virtual</time></li>
+      <li data-in data-pin="broward" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20a7 7 0 0114 0M18.5 4.5l1.5-1.5M5.5 4.5L4 3"/></svg></span><div><b>Building Agents with Google</b><span>Broward County, FL · virtual</span></div><time>Virtual</time></li>
+      <li data-in data-pin="kc" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="2.6"/><circle cx="16" cy="9" r="2.6"/><path d="M3.5 19a4.5 4.5 0 019 0M11.5 19a4.5 4.5 0 019 0"/></svg></span><div><b>Tech for Good Meetup</b><span>Using technology for social good · Kansas City</span></div><time>Meetup</time></li>
+      <li data-in data-pin="carbondale" tabindex="0"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 18l8-13 8 13zM9 18v-3h6v3"/></svg></span><div><b>CETM College Ambassador</b><span>SIU · Carbondale, IL · ACM · CAT Dawgs RSO</span></div><time>2024—2025</time></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec contact">
+    <h2 class="h" data-in>Say hi<i>.</i></h2>
+    <a class="mail" data-in href="mailto:konnerharris4@gmail.com">konnerharris4@gmail.com</a>
+    <p class="links" data-in><a href="https://github.com/kkonnerharris" target="_blank" rel="noopener">GitHub ↗</a><a href="https://kkonnerharris.github.io/neuroreach-web/" target="_blank" rel="noopener">NeuroReach ↗</a></p>
+  </section>
+</main>
+
+<footer class="foot"><p>© <span data-year>2026</span> Konner Harris · layout inspired by diegovz.com · project imagery partly illustrative</p></footer>
+
+<a class="up" href="#home" aria-label="Back to top" data-up>
+  <svg class="up__ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/><circle class="up__prog" cx="28" cy="28" r="26" data-prog/></svg>
+  <svg class="up__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 10l4-4 4 4"/></svg>
+</a>
+
+<script src="dv.js" defer></script>
+<script type="module" src="cubes.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# publish only what the live page uses; the old tamalsen version and unused images stay local
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/dv.css
+!/dv.js
+!/cubes.js
+!/img/
+/img/*
+!/img/astrabuddy-dash.webp
+!/img/astrabuddy.webp
+!/img/h-brainscan.webp
+!/img/h-eeg.webp
+!/img/h-gerry.webp
+!/img/h-neuroreach.webp
+!/img/h-robot.webp
+!/img/hl-project.jpg
+!/img/konner-cutout.webp
+!/img/mars.webp
+!/img/netops.webp
+!/img/og.jpg
+!/img/t-*.webp
