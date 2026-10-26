@@ -238,7 +238,7 @@ main,.foot{position:relative;z-index:1}
 .foot{width:var(--w);margin:0 auto;padding:26px 0 40px;border-top:1px solid #141414;font:400 12px/1.5 var(--mono);color:var(--g2)}
 
 /* back to top, ringed by scroll progress */
-.up{position:fixed;right:40px;bottom:40px;z-index:40;width:56px;height:56px;display:grid;place-items:center;border-radius:50%;opacity:0;pointer-events:none;transition:opacity .3s}
+.up{position:fixed;left:40px;bottom:40px;z-index:40;width:56px;height:56px;display:grid;place-items:center;border-radius:50%;opacity:0;pointer-events:none;transition:opacity .3s}
 .up.is-on{opacity:1;pointer-events:auto}
 .up__ring{position:absolute;inset:0;transform:rotate(-90deg)}
 .up__ring circle{fill:#000;stroke:#2a2a2a;stroke-width:1.5}
@@ -277,7 +277,7 @@ main,.foot{position:relative;z-index:1}
   .tl__p::before{left:13px;margin-left:-4px}
   .tl__p::after,.tl__p.is-r::after{left:13px;right:auto;width:27px}
   .tl__pc,.tl__p.is-r .tl__pc{grid-column:1;justify-self:stretch;width:auto;margin:0 0 0 40px}
-  .up{right:16px;bottom:16px}
+  .up{left:16px;bottom:16px}
   .sec{padding-top:84px}
 }
 @media (prefers-reduced-motion:reduce){
