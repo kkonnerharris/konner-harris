@@ -214,6 +214,9 @@ main,.foot{position:relative;z-index:1}
 .tl__thumb--sq::after{content:"";position:absolute;right:10px;bottom:10px;width:18px;height:18px;background:#e9e9e9}
 .tl__thumb--ev{display:grid;place-items:center;background:#120910;border:1px dashed #f06aa588}
 .tl__thumb--ev svg{width:26px;height:26px;fill:none;stroke:var(--pink);stroke-width:1.6;stroke-linejoin:round}
+.tl__thumb--work{display:grid;place-items:center;background:#f06aa5}
+.tl__thumb--work svg{width:26px;height:26px;fill:none;stroke:#111;stroke-width:1.7;stroke-linejoin:round}
+.tl__p--work .tl__pc{border-color:#f06aa544;background:#0d0609}
 .tl__p--ev .tl__pc{border-style:dashed;border-color:#f06aa555;background:#07040a}
 .tl__p--ev::before{border-radius:50%}
 .tl__pc .mono{margin:0 0 4px;font-size:10px}
