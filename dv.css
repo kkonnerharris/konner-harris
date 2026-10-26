@@ -306,3 +306,7 @@ main,.foot{position:relative;z-index:1}
 }
 .tl__pc code,.oss code{font:400 11.5px/1 var(--mono);color:#e6e6e6}
 .tl__p[hidden]{display:none}
+.tl__pc p b{color:#e6e6e6;font-weight:500}
+.tl__pc .oss-link{margin-top:6px}
+.oss-link a{font:400 11px/1.4 var(--mono);color:var(--pink);text-decoration:none;border-bottom:1px solid #f06aa555}
+.oss-link a:hover{border-color:var(--pink)}
