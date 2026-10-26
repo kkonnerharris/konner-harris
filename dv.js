@@ -147,6 +147,7 @@
       { key: 'kc', ll: [-94.58, 39.1], name: 'Kansas City', sub: 'Tech for good meetup', dx: -10, dy: -14, align: 'right' },
       { key: 'chapelhill', ll: [-79.06, 35.91], name: 'Chapel Hill', sub: 'AI for small business', v: true, dx: 10, dy: -6, align: 'left' },
       { key: 'atlanta', ll: [-84.39, 33.75], name: 'Atlanta', sub: 'Georgia Tech · online', v: true, dx: -10, dy: 18, align: 'right' },
+      { key: 'seattle', ll: [-122.33, 47.61], name: 'Seattle', sub: 'VR hackathon · Jan 2027', planned: true, dx: 10, dy: -4, align: 'left' },
       { key: 'stanford', ll: [-122.17, 37.43], name: 'Stanford', sub: 'TreeHacks · Feb 2027', planned: true, dx: 10, dy: -4, align: 'left' },
       { key: 'broward', ll: [-80.25, 26.12], name: 'Broward County', sub: 'Agents with Google', v: true, dx: -12, dy: -4, align: 'right' },
     ];
