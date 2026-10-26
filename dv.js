@@ -34,24 +34,9 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   $$('[data-in]').forEach(el => io.observe(el));
 
-  // open source: public PRs to Microsoft and Google repos, straight from GitHub search.
-  // Stays hidden until the first one exists; open = in review, merged = merged, closed unmerged is skipped.
-  const oss = $('[data-oss]');
-  if (oss) {
-    const q = encodeURIComponent('is:pr author:kkonnerharris org:microsoft org:google');
-    fetch(`https://api.github.com/search/issues?q=${q}&sort=created&order=desc&per_page=8`)
-      .then(r => r.ok ? r.json() : null)
-      .then(d => {
-        const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-        const prs = (d?.items || []).filter(i => i.state === 'open' || i.pull_request?.merged_at);
-        if (!prs.length) return;
-        oss.innerHTML = prs.map(i => {
-          const repo = i.repository_url.split('/repos/')[1], merged = !!i.pull_request?.merged_at;
-          return `<li><span class="st${merged ? ' st--merged' : ''}">${merged ? '✓ merged' : 'in review'}</span><a href="${i.html_url}" target="_blank" rel="noopener">${esc(repo)}: ${esc(i.title)}</a></li>`;
-        }).join('');
-        oss.hidden = false;
-      })
-      .catch(() => {});
+  // local preview extras (private.js is never published)
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    const x = document.createElement('script'); x.src = 'private.js'; document.body.append(x);
   }
 
   // seamless loop for the places strip: a second copy for the eye, hidden from screen readers
