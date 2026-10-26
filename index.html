@@ -30,7 +30,9 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero__photo" aria-hidden="true"><img src="img/konner-cutout.webp" width="1087" height="1100" alt=""></div>
-    <div class="cursor-tag" data-tag aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5.5 14 2-6 6-2z"/></svg><span>Konner</span></div>
+    <div class="cursor-tag" data-tag role="button" tabindex="0" aria-label="Play Pong: the name tag becomes your paddle"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1l5.5 14 2-6 6-2z"/></svg><span class="tag-box"><span data-tag-label>Konner</span><small class="tag-hint">click me · pong</small></span></div>
+    <div class="ball" data-ball hidden aria-hidden="true"></div>
+    <p class="pong-score" data-pong-score hidden aria-live="polite"></p>
     <div class="hero__copy">
       <h1 class="hero__title"><span class="l1">Hi there</span><span class="l2">I am Konner<i class="sq" aria-hidden="true"></i></span></h1>
       <p class="hero__sub"><span class="g">Building systems since</span> 2023</p>

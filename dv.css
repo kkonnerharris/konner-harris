@@ -68,9 +68,19 @@ main,.foot{position:relative;z-index:1}
 @keyframes drift{to{transform:translateX(-50%)}}
 
 /* the wandering collaborator cursor */
-.cursor-tag{position:absolute;left:0;top:0;z-index:3;pointer-events:none;display:flex;align-items:flex-start;will-change:transform}
+.cursor-tag{position:absolute;left:0;top:0;z-index:3;display:flex;align-items:flex-start;will-change:transform;cursor:pointer;outline-offset:4px}
 .cursor-tag svg{width:16px;height:16px;fill:var(--pink);margin-top:14px;transform:rotate(-8deg)}
-.cursor-tag span{margin-left:2px;padding:3px 12px 4px;background:var(--pink);color:#111;font:500 13px/1.2 var(--sans)}
+.tag-box{display:flex;flex-direction:column;align-items:flex-start;margin-left:2px}
+.tag-box [data-tag-label]{padding:3px 12px 4px;background:var(--pink);color:#111;font:500 13px/1.2 var(--sans);white-space:nowrap;transition:padding .25s}
+.tag-hint{margin-top:5px;font:400 10px/1 var(--mono);color:#ffffff66;letter-spacing:.04em;opacity:0;transition:opacity .3s}
+.cursor-tag:hover .tag-hint,.cursor-tag:focus-visible .tag-hint,.is-pong .tag-hint{opacity:1}
+
+/* hero pong: the tag is the paddle, the ball is royal blue */
+.is-pong{cursor:none;touch-action:none}
+.is-pong .cursor-tag{cursor:none}
+.is-pong [data-tag-label]{padding:6px 26px 7px;font-size:15px;box-shadow:0 0 24px #f06aa566}
+.ball{position:absolute;left:0;top:0;z-index:4;width:18px;height:18px;border-radius:50%;background:#4169e1;box-shadow:0 0 18px #4169e1aa,0 0 4px #9fb3ff inset;pointer-events:none;will-change:transform}
+.pong-score{position:absolute;right:40px;top:104px;z-index:4;margin:0;font:400 12px/1 var(--mono);letter-spacing:.06em;color:#9fb3ff}
 
 /* sections */
 .sec{width:var(--w);margin:0 auto;padding:110px 0 30px}
@@ -270,6 +280,7 @@ main,.foot{position:relative;z-index:1}
   .top{height:64px;padding:0 16px}
   .hero{padding-bottom:12vh}
   .drift{padding:0 16px;bottom:16px}
+  .pong-score{right:16px;top:80px}
   .drift__k{display:none}
   .hero__photo{top:110px;width:min(420px,92vw)}
   .hero__title{font-size:clamp(56px,17vw,90px)}
