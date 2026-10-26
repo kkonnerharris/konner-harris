@@ -36,7 +36,7 @@
     <div class="hero__copy">
       <h1 class="hero__title"><span class="l1">Hi there</span><span class="l2">I am Konner<i class="sq" aria-hidden="true"></i></span></h1>
       <p class="hero__sub"><span class="g">Building systems since</span> 2023</p>
-      <p class="hero__sub">Software Engineer <span class="g">at</span> <a href="#experience">COET Systems <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></p>
+      <p class="hero__sub">Software and AI Solutions Architect <span class="g">at</span> <a href="#experience">Avaiz <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></p>
       <p class="hero__sub">Research Assistant <span class="g">at</span> <a href="#experience">SIU X-Lab <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></p>
     </div>
       <div class="drift" aria-label="Places I've worked">
@@ -92,7 +92,7 @@
 
       <article class="box b-game" data-in>
         <div class="win game"><img src="img/netops.webp" loading="lazy" alt="A network closet in Saluki NetOps, a 3D game of the SIU network job"></div>
-        <h3>I turned my job into a game</h3><p>Saluki NetOps: work tickets, fix VLANs, escalate bad jacks to Telecom.</p>
+        <h3>I turned my job into a game</h3><p>Saluki NetOps: work tickets, fix VLANs, escalate bad jacks to Telecom. <a href="#play-netops">Play here ↓</a></p>
       </article>
 
       <article class="box b-field" data-in>
@@ -265,10 +265,22 @@
   </section>
 
   <!-- PROJECTS -->
+  <section id="play" class="sec">
+    <h2 class="h">Play the projects<i>.</i></h2>
+    <article id="play-netops" class="play-project box">
+      <div class="play-project__heading"><div><h3>Saluki NetOps</h3><p>Work a shift on the SIU network. Keyboard and mouse recommended. Click inside to play; press Esc to release the mouse.</p></div><a href="https://saluki-netops-konner-harris.kharris1234555.chatgpt.site" target="_blank" rel="noopener">Open full game ↗</a></div>
+      <iframe src="https://saluki-netops-konner-harris.kharris1234555.chatgpt.site" title="Play Saluki NetOps" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+    </article>
+    <article id="play-neuroreach" class="play-project box">
+      <div class="play-project__heading"><div><h3>Play NeuroReach</h3><p>Press Play below, finish the three-step tutorial, then click a brain-command card or use keys 1–5 to control the robot. Allow a moment for the first level to load.</p></div><a href="https://kkonnerharris.github.io/neuroreach-web/" target="_blank" rel="noopener">Play in new tab ↗</a></div>
+      <iframe src="https://kkonnerharris.github.io/neuroreach-web/" title="Play NeuroReach" loading="eager" allow="fullscreen; camera; autoplay" allowfullscreen></iframe>
+    </article>
+  </section>
+
   <section id="projects" class="sec">
     <h2 class="h" data-in>Some projects<i>.</i></h2>
     <ul class="pgrid">
-      <li class="pc" data-in><a href="https://kkonnerharris.github.io/neuroreach-web/" target="_blank" rel="noopener">
+      <li class="pc" data-in><a href="#play-neuroreach">
         <div class="pc__dev"><img src="img/h-neuroreach.webp" loading="lazy" alt=""></div>
         <div class="pc__txt"><h3>NeuroReach</h3><p>Real EEG motor-imagery data drives a robot arm. Built at the ASU West Valley Game Jam.</p></div>
         <svg class="pc__arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg></a></li>
@@ -305,8 +317,8 @@
         <div class="pc__txt"><h3>COETMGuide</h3><p>AI academic advising with visual degree planning across 14+ programs.</p></div></div></li>
       <li class="pc" data-in><div class="pc__in"><div class="pc__dev pc__dev--type" style="--c:#33200f"><span>ETL<b>.</b></span></div>
         <div class="pc__txt"><h3>Distributed data</h3><p>PySpark ETL on Dataproc and BigQuery analysis of a 500+ column dataset.</p></div></div></li>
-      <li class="pc" data-in><div class="pc__in"><div class="pc__dev"><img src="img/netops.webp" loading="lazy" alt=""></div>
-        <div class="pc__txt"><h3>Saluki NetOps</h3><p>A 3D game of my SIU network job: tickets, VLANs, Cisco and Extreme.</p></div></div></li>
+      <li class="pc" data-in><a href="#play-netops"><div class="pc__dev"><img src="img/netops.webp" loading="lazy" alt=""></div>
+        <div class="pc__txt"><h3>Saluki NetOps</h3><p>A 3D game of my SIU network job: tickets, VLANs, Cisco and Extreme. Play here ↑</p></div></a></li>
       <li class="pc" data-in><div class="pc__in"><div class="pc__dev"><img src="img/h-eeg.webp" loading="lazy" alt=""></div>
         <div class="pc__txt"><h3>EEG privacy</h3><p>Can EEG reveal intent or identity? Ongoing research, no results claimed yet.</p></div></div></li>
     </ul>
