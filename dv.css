@@ -312,3 +312,4 @@ main,.foot{position:relative;z-index:1}
 .tl__pc .oss-link{margin-top:6px}
 .oss-link a{font:400 11px/1.4 var(--mono);color:var(--pink);text-decoration:none;border-bottom:1px solid #f06aa555}
 .oss-link a:hover{border-color:var(--pink)}
+.tl__thumb--org{object-fit:contain;padding:7px;background:#fff;border-color:#f06aa588}
