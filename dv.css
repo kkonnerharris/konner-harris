@@ -320,3 +320,20 @@ main,.foot{position:relative;z-index:1}
 .tl__jobh{display:flex;align-items:center;gap:10px}
 .tl__pic--job{flex:none;width:34px;height:34px;border-radius:10px}
 .tl__pic--job svg{width:58%;height:58%}
+
+/* in the field: polaroids */
+.pols{list-style:none;margin:0;padding:8px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px 22px}
+.pol{display:block;width:100%;padding:9px 9px 0;background:#f4f1ea;border:0;cursor:zoom-in;text-align:left;transform:rotate(var(--r));box-shadow:0 14px 30px #0009;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.pol img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#ddd}
+.pol span{display:block;padding:9px 2px 12px;font:400 11px/1.35 var(--mono);color:#3b3b3b}
+.pol:hover,.pol:focus-visible{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:0 22px 40px #000b;outline:none}
+.pol:focus-visible{box-shadow:0 0 0 2px var(--pink),0 22px 40px #000b}
+.lightbox{max-width:min(92vw,900px);padding:12px 12px 4px;background:#f4f1ea;border:0;box-shadow:0 30px 80px #000}
+.lightbox::backdrop{background:#000c}
+.lightbox img{display:block;max-width:100%;max-height:78vh;margin:0 auto}
+.lightbox p{margin:8px 2px 10px;font:400 12px/1.4 var(--mono);color:#3b3b3b}
+.lightbox__x{position:absolute;top:6px;right:10px;border:0;background:none;font-size:26px;line-height:1;color:#3b3b3b;cursor:pointer}
+@media (max-width:1000px){.pols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){.pols{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.pol span{font-size:10px}}
+@media (prefers-reduced-motion:reduce){.pol{transition:none}}
+/* end polaroids */

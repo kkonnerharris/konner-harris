@@ -91,6 +91,18 @@
     }
   }
 
+  // photo gallery: click a polaroid to see it full size
+  const box = $('[data-lightbox]')
+  if (box) {
+    const img = box.querySelector('img'), cap = box.querySelector('p')
+    document.querySelectorAll('.pol').forEach((b) => b.addEventListener('click', () => {
+      img.src = b.dataset.full; img.alt = b.querySelector('img').alt; cap.textContent = b.querySelector('span').textContent
+      box.showModal()
+    }))
+    box.querySelector('.lightbox__x').addEventListener('click', () => box.close())
+    box.addEventListener('click', (e) => { if (e.target === box) box.close() })
+  }
+
   // drawing pad
   const pad = $('[data-draw]');
   if (pad) {
