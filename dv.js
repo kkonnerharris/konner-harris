@@ -34,16 +34,6 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   $$('[data-in]').forEach(el => io.observe(el));
 
-  // more projects
-  const more = $('[data-more]'), list = $('#more-projects');
-  more.addEventListener('click', () => {
-    const open = more.getAttribute('aria-expanded') !== 'true';
-    more.setAttribute('aria-expanded', open);
-    more.classList.toggle('is-open', open);
-    list.hidden = !open;
-    more.querySelector('.h3').textContent = open ? 'Fewer projects' : 'More projects';
-  });
-
   // seamless loop for the places strip: a second copy for the eye, hidden from screen readers
   const drift = $('[data-drift]');
   if (drift) { const copy = drift.innerHTML.replace(/<li>/g, '<li aria-hidden="true">'); drift.innerHTML += copy; }
